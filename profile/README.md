@@ -15,3 +15,15 @@ Each Burrowbox machine is a persistent little Linux computer for an AI agent: a 
 
 - **For your own agent:** create a machine, connect your agent with one command, and watch it work.
 - **For your platform's customers:** provision one isolated machine per customer by API, with metering and live view built in.
+
+```bash
+bun add burrowbox
+```
+
+```ts
+import { Burrowbox } from "burrowbox";
+
+const bb = new Burrowbox(); // reads BURROWBOX_KEY
+const machine = await bb.machines.create({ name: "research-bot", size: "tiny" });
+console.log(machine.mcpUrl);
+```
